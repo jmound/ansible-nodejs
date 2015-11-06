@@ -46,3 +46,8 @@
     dest=/etc/profile.d/nodejs_path.sh
     mode=0644
   when: nodejs.add_node_modules_bin_to_path
+
+  # needs idempotency
+- name: update npm
+  command: npm install -g npm
+  sudo: true
